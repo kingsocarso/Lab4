@@ -17,7 +17,7 @@ public class ReclamationProject {
      * @param b Second input string which will be searched for common substrings with a.
      * @return The resultant common substrings.
      */
-    static String doit(final String a, final String b) {
+    static String find(final String a, final String b) {
         String newA = a, newB = b;
         if (a.length() > b.length()) {
             String c = a;
@@ -31,8 +31,8 @@ public class ReclamationProject {
         for (int i = 0; i < newA.length(); i++) {
             for (int j = newA.length() - i; j > 0; j--) {
                 for (int k = 0; k < newB.length() - j; k++) {
-                    if (a.regionMatches(i, b, k, j) && j > r.length()) {
-                        r = a.substring(i, i + j);
+                    if (newA.regionMatches(i, newB, k, j) && j > r.length()) {
+                        r = newA.substring(i, i + j);
                     }
                 }
             }
