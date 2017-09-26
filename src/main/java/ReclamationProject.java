@@ -18,8 +18,9 @@ public class ReclamationProject {
      * @return The resultant common substrings.
      */
     static String doit(final String a, final String b) {
+        String newA = a, newB = b;
         if (a.length() > b.length()) {
-            String c = a, newA = a, newB = b;
+            String c = a;
             newA = b;
             newB = c;
         }
@@ -27,13 +28,13 @@ public class ReclamationProject {
         /*
          * For loop with i
          */
-        for (int i = 0; i < a.length(); i++) {
-            for (int j = a.length() - i; j > 0; j--) {
-                for (int k = 0; k < b.length() - j; k++) {
+        for (int i = 0; i < newA.length(); i++) {
+            for (int j = newA.length() - i; j > 0; j--) {
+                for (int k = 0; k < newB.length() - j; k++) {
                     if (a.regionMatches(i, b, k, j) && j > r.length()) {
                         r = a.substring(i, i + j);
                     }
                 }
-            } // Ah yeah
+            }
         } return r; }
 }
