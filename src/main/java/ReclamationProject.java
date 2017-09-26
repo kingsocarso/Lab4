@@ -30,8 +30,9 @@ public class ReclamationProject {
         for (int i = 0; i < a.length(); i++) {
             for (int j = a.length() - i; j > 0; j--) {
                 for (int k = 0; k < b.length() - j; k++) {
-                    r = (a.regionMatches(i, b, k, j) && j
-                            > r.length()) ? a.substring(i, i + j) : r; // Do it!
+                    if (a.regionMatches(i, b, k, j) && j > r.length()) {
+                        r = a.substring(i, i + j);
+                    }
                 }
             } // Ah yeah
         } return r; }
